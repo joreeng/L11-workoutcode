@@ -9,7 +9,11 @@ const cors = require("cors")
 // express app
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://joreenworkoutappfrontend.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true // If you're using cookies or authorization headers
+}));
 // middleware
 app.use(express.json())
 
